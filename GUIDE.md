@@ -20,7 +20,7 @@ sudo dnf install dhcp-client # client
 
 > [!NOTE]
 > The machines in this step should be connected to the internet.
-> Use NAT or Bridged network
+> Use **NAT** or **Bridged network**.
 
 Run each script in the appropriate machine:
 
@@ -31,6 +31,6 @@ Run each script in the appropriate machine:
 ### Step 2
 
 > [!NOTE]
-> Use Internal network (VirtualBox) or Custom (VMware) network
+> Use **Internal network** (VirtualBox) or **Custom** (VMware).
 
 - `./step-2/client.sh` in both clients
