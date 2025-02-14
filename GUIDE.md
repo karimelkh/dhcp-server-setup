@@ -8,7 +8,19 @@
 
 ## Start
 
+## Step 0
+
+```
+sudo dnf update
+sudo dnf install dhcp-server # server
+sudo dnf install dhcp-client # client
+```
+
 ### Step 1
+
+> [!NOTE]
+> The machines in this step should be connected to the internet.
+> Use NAT or Bridged network
 
 Run each script in the apropriate machine:
 
@@ -17,5 +29,8 @@ Run each script in the apropriate machine:
 - `./step-1/dhcp-server.sh` in the dhcp server
 
 ### Step 2
+
+> [!NOTE]
+> Use Internal network (VirtualBox) or Custom (VMware) network
 
 - `./step-2/client.sh` in both clients
