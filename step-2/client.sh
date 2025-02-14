@@ -18,11 +18,14 @@ then
   exit 1
 fi
 
-nmcli c modify $DEVNAME ipv4.addresses ""
-nmcli c modify $DEVNAME ipv4.gateway ""
-nmcli c modify $DEVNAME ipv4.method auto
-nmcli c down $DEVNAME
-nmcli c up $DEVNAME
-
 sudo mkdir -p /etc/NetworkManager/conf.d/
 sudo cp ./dhcp-client.conf /etc/NetworkManager/conf.d/dhcp-client.conf
+
+nmcli c modify $DEVNAME ipv4.method auto
+nmcli c modify $DEVNAME ipv4.gateway ""
+nmcli c modify $DEVNAME ipv4.addresses ""
+
+sudo systemctl restart NetworkManager
+
+nmcli c down $DEVNAME
+nmcli c up $DEVNAME

@@ -18,8 +18,8 @@ then
   exit 1
 fi
 
-nmcli c modify $DEVNAME ipv4.addresses "192.168.1.102/24"
-nmcli c modify $DEVNAME ipv4.gateway "192.168.1.1"
 nmcli c modify $DEVNAME ipv4.method manual
+nmcli c modify $DEVNAME ipv4.gateway "192.168.1.1"
+nmcli c modify $DEVNAME ipv4.addresses "192.168.1.102/24"
 nmcli c down $DEVNAME
 nmcli c up $DEVNAME
