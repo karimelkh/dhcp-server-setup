@@ -8,9 +8,9 @@
 
 ## Start
 
-## Step 0
+### Step 0
 
-```
+```sh
 sudo dnf update
 sudo dnf install dhcp-server # server
 sudo dnf install dhcp-client # client
@@ -22,7 +22,7 @@ sudo dnf install dhcp-client # client
 > The machines in this step should be connected to the internet.
 > Use NAT or Bridged network
 
-Run each script in the apropriate machine:
+Run each script in the appropriate machine:
 
 - `./step-1/client-1.sh` in the 1st client
 - `./step-1/client-2.sh` in the 2nd client
