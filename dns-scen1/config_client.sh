@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 INAME="$1"
 
 hostnamectl set-hostname client
