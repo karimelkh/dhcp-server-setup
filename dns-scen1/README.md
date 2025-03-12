@@ -17,6 +17,7 @@ Clone the repo in the ns server:
 
 ```sh
 git clone https://github.com/karimelkh/dhcp-server-setup.git
+cd dhcp-server-setup/dns-scen1
 ```
 
 ## Step 3
