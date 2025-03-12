@@ -2,7 +2,7 @@
 
 ## Step 1
 
-> ![NOTE]
+> [!NOTE]
 > make sure the the virtual machine is connected to the internet
 
 Install `bind`:
