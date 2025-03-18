@@ -1,0 +1,12 @@
+$TTL	86400
+@ IN SOA ns.est.intra. root.est.intra. (
+	2025031801	; Serial number [YYYYMMDDnn]
+	3600		; Refresh
+	1800		; Retry
+	604800		; Expire	
+	86400		; Minimum TTL
+)
+
+@ IN NS ns.est.intra.
+
+1 IN PTR ns.est.intra.
