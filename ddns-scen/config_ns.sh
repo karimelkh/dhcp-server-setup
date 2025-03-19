@@ -24,7 +24,7 @@ chown root:named /etc/named/ddns.key
 chmod 640 /etc/named/ddns.key
 semanage fcontext -a -t named_conf_t /etc/named/ddns.key
 
-cp ./dhcpd.conf /etc/dhcpc/
+cp ./dhcpd.conf /etc/dhcp/
 cp ./named.conf /etc/
 
 [ ! -d /var/named ] && mkdir /var/named
