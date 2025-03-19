@@ -2,6 +2,9 @@
 
 ## Step 1: Get ready PART 1
 
+> [!NOTE]
+> the virtual machine should be connected to the internet
+
 Ensure that `bind`, `bind-utils`, `dhcp-server` and `git` (to clone this repo)
 packages are installed.
 
@@ -21,6 +24,9 @@ git clone https://github.com/karimelkh/dhcp-server-setup.git
 ```
 
 ## Step 3: Main event
+
+> [!NOTE]
+> the virtual machine should be connected to internal network
 
 1. After cloning the repo, cd into it.
 
