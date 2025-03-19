@@ -1,10 +1,10 @@
 #!/bin/sh
 
+set -xe
+
 INAME="$1"
 
-[ -z "$INAME" ]
-  && echo "$0 <iname>"
-  && exit 1
+[ -z "$INAME" ] && echo "$0 <iname>" && exit 1
 
 hostnamectl set-hostname ns
 
@@ -20,7 +20,12 @@ tsig-keygen -a hmac-md5 ddns-update-key >/etc/named/ddns.key
 
 [ ! -f /etc/named/ddns.key ] && exit 1
 
-cp ./named.conf /etc/named.conf
+chown root:named /etc/named/ddns.key
+chmod 640 /etc/named/ddns.key
+semanage fcontext -a -t named_conf_t /etc/named/ddns.key
+
+cp ./dhcpd.conf /etc/dhcpc/
+cp ./named.conf /etc/
 
 [ ! -d /var/named ] && mkdir /var/named
 cp ./est.intra.zone /var/named/
@@ -34,9 +39,7 @@ chown named:named /var/named/est.intra.zone /var/named/1.168.192.in-addr.arpa.zo
 
 restorecon -Rv /var/named/
 
-[ -e /usr/lib/systemd/system/named.service ]
-  && cp /usr/lib/systemd/system/named.service /etc/systemd/system/
-  || cp ./named.service /etc/systemd/system/
+[ -e /usr/lib/systemd/system/named.service ] && cp /usr/lib/systemd/system/named.service /etc/systemd/system/ || cp ./named.service /etc/systemd/system/
 
 if grep -q '^OPTIONS=' /etc/sysconfig/named
 then
