@@ -57,3 +57,12 @@ sudo dhclient -r && sudo dhclient -v
 
 Now the zone files: *est.intra.zone* and *1.168.192.in-addr.arpa.zone* should have changed
 and includes now the client records
+
+## Troubleshooting
+
+1. If the dhcpd service did not (re)start, type:
+
+```sh
+sudo setenforce 0
+sudo systemctl restart dhcpd
+```
