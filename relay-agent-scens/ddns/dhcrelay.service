@@ -1,0 +1,13 @@
+[Unit]
+Description=DHCP Relay Agent
+Documentation=man:dhcrelay(8)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/sbin/dhcrelay -i enp0s3 -i enp0s8 192.168.1.1 -d --no-pid
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target
