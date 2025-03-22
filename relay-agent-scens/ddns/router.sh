@@ -5,7 +5,7 @@ set -xe
 IFACE_LAN="$1"
 IFACE_DMZ="$2"
 
-if [ -z "$IFACE_LAN" ] || [ "$IFACE_DMZ" ]
+if [ -z "$IFACE_LAN" ] || [ -z "$IFACE_DMZ" ]
 then
   echo "$0 <iface_lan> <iface_dmz>"
   exit 1
